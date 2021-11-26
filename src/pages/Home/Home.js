@@ -3,13 +3,16 @@ import React from "react";
 import Section from "../../Components/Section/Section";
 import { actionMovies, newMovies } from "../../api/movies";
 
+import { actionTvShows, newTvShows } from "../../api/tvShows";
+
 export default function Home() {
+ /*  let content = "movie"; */
   return (
     <div>
-      <Section title="Action movies" data={actionMovies} />
-      <Section title="New Movies" data={newMovies} />
-      <Section title="New TV Shows" />
-      <Section title="Action TV Shows" />
+      <Section title="Action movies" data={actionMovies} content="movie" />
+      <Section title="New Movies" data={newMovies} content="movie" />
+      <Section title="New Tv Shows" data={newTvShows}  content="tv-show"/>
+      <Section title="Action Tv Shows" data={actionTvShows} content="tv-show" />
     </div>
   );
 }
