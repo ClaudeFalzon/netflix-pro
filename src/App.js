@@ -10,6 +10,8 @@ import Movies from "./pages/Movies/Movies";
 import TvShows from "./pages/TvShows/TvShows";
 import NotFound from "./pages/NotFound/NotFound";
 import Movie from "./pages/Movie/Movie";
+import TvShow from "./pages/TvShow/TvShow";
+import TvShowEpisode from "./pages/TvShowEpisode/TvShowEpisode";
 
 function App() {
   return (
@@ -18,11 +20,17 @@ function App() {
 
       <main className="Container">
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/movies" element={<Movies/>}/>
-          <Route path="/movie/:pageId" element={<Movie/>}/>
-          <Route path="/tv-shows" element={<TvShows/>}/>
-          <Route path="*" element={<NotFound/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:pageId" element={<Movie />} />
+          <Route path="/tv-shows" element={<TvShows />} />
+
+          <Route path="/tv-show/:tvShowId" element={<TvShow />} />
+          <Route
+            path="/tv-show-episode/:tvShowId/:seasonId/:episodeId"
+            element={<TvShowEpisode/>}
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
